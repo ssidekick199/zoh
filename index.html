@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Здоровый Образ Жизни</title>
+    <style>
+        :root {
+            --primary-color: #1a535c;
+            --secondary-color: #4ecdc4;
+            --accent-color: #ff6b6b;
+            --text-color: #2d3436;
+            --light-bg: #f7fff7;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', system-ui, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background: var(--light-bg);
+        }
+
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            margin-top: 100px;
+            background: var(--gradient), url('https://example.com/hero-bg.jpg');
+            background-blend-mode: multiply;
+            background-size: cover;
+            padding: 8rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin: 5rem 0;
+            background: white;
+            border-radius: 20px;
+            padding: 4rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--accent-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-size: 2.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .infographic {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 15px;
+        }
+
+        .infographic img {
+            flex: 1;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .infographic-content {
+            flex: 2;
+        }
+
+        .quote {
+            border-left: 4px solid var(--accent-color);
+            padding: 2rem;
+            margin: 3rem 0;
+            background: var(--light-bg);
+            font-style: italic;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .infographic {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <h2 style="font-size: 1.8rem; color: var(--accent-color)">HealthMaster</h2>
+            <div class="nav-links">
+                <a href="#nutrition">Питание</a>
+                <a href="#fitness">Активность</a>
+                <a href="#mental">Психика</a>
+                <a href="#water">Гидратация</a>
+                <a href="#habits">Привычки</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Научный подход к здоровому образу жизни</h1>
+            <p>Полное руководство по долголетию и качеству жизни</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="section" id="nutrition">
+            <h2>Оптимальное питание</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Баланс макронутриентов</h3>
+                    <p>Идеальное соотношение по ВОЗ:</p>
+                    <ul>
+                        <li>Белки: 15-25% (1.2-1.6г/кг)</li>
+                        <li>Жиры: 25-35% (ненасыщенные 80%)</li>
+                        <li>Углеводы: 45-60% (сложные 90%)</li>
+                    </ul>
+                    <div class="infographic">
+                        <img src="img/1.jpeg" width="150" height="200" alt="График макронутриентов">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Микроэлементы</h3>
+                    <p>Критически важные вещества:</p>
+                    <ul>
+                        <li>Витамин D: 600-800 МЕ/день</li>
+                        <li>Омега-3: 1.1-1.6г/день</li>
+                        <li>Железо: 8-18мг/день</li>
+                        <li>Кальций: 1000-1200мг/день</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="infographic">
+                <img src="img/2.jpeg" width="200" height="250" alt="Пирамида питания">
+                <div class="infographic-content">
+                    <h3>Пирамида здорового питания</h3>
+                    <ol>
+                        <li>Овощи и фрукты (5-9 порций)</li>
+                        <li>Цельнозерновые продукты</li>
+                        <li>Белковые продукты</li>
+                        <li>Молочные продукты</li>
+                        <li>Полезные жиры</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="fitness">
+            <h2>Физическая активность</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Силовые тренировки</h3>
+                    <ul>
+                        <li>Частота: 3-4 раза/неделю</li>
+                        <li>Подходы: 3-4 на группу</li>
+                        <li>Отдых: 60-90 сек между подходами</li>
+                        <li>Примеры: приседания, тяги, жимы</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Кардио нагрузки</h3>
+                    <ul>
+                        <li>Оптимальный пульс: (220 - возраст) × 0.6-0.8</li>
+                        <li>Продолжительность: 150 мин/неделю</li>
+                        <li>Методы: интервальные тренировки</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="quote">
+                <p>"Физические упражнения могут заменить множество лекарств, 
+                но ни одно лекарство в мире не может заменить физические упражнения."</p>
+                <p>- Анжело Моссо</p>
+            </div>
+        </section>
+        <section class="section" id="water">
+            <h2>Водный баланс</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Нормы потребления</h3>
+                    <ul>
+                        <li>30мл на 1кг веса</li>
+                        <li>+500мл на каждый час активности</li>
+                        <li>Сигналы жажды: уже обезвоживание</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Преимущества гидратации</h3>
+                    <ul>
+                        <li>Улучшение когнитивных функций на 30%</li>
+                        <li>Снижение риска камней в почках на 60%</li>
+                        <li>Ускорение метаболизма на 3%</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="habits">
+            <h2>Формирование привычек</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Метод 21/90</h3>
+                    <p>21 день на формирование привычки<br>
+                    90 дней на стабилизацию</p>
+                    <ul>
+                        <li>Начинайте с малого</li>
+                        <li>Отслеживайте прогресс</li>
+                        <li>Система вознаграждений</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Цифровая гигиена</h3>
+                    <ul>
+                        <li>Синий свет: фильтры после 18:00</li>
+                        <li>Цифровой детокс 1 день/неделю</li>
+                        <li>Лимит соцсетей: 30 мин/день</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div style="grid-column: 1 / -1; text-align: center; margin-top: 2rem; opacity: 0.8;">
+                <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.2);">
+                <p>Выполнено: учащимся 9Э Смирновым Артемом</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
